@@ -21,7 +21,7 @@ function transformTime(seconds) {
 
 async function displayPlaylists() {
     // let fetchFolders = await fetch("http://127.0.0.1:5500/songs"); 
-    let fetchFolders = await fetch("https://200deepesh.github.io/Song-Waves/songs");
+    let fetchFolders = await fetch("https://github.com/200Deepesh/Song-Waves/tree/main/songs");
     let r1 = await fetchFolders.text();
     let div = document.createElement("div");
     div.innerHTML = r1;
