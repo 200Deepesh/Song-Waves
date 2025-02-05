@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utilities.css">
+</head>
+
+<body class="flex border">
+    <div id="main" class="flex border m-8">
+        <div id="left" class="border round-border dark-background flex no-shrink">
+            <div class="nav">
+                <div id="nav-left" class="border flex aline logo">
+                    <img src="svg-collection/nav-svg/logo.svg" alt="">
+                    <div id="cancle-svg" class="aline cursor-pointer">
+                        <img src="svg-collection/left-main-svg/cancle.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="left-top" class="border flex bold arial-font grey-font aline">
+                <div class="flex aline">
+                    <span id="library-svg" class=""><img src="svg-collection/left-main-svg/library.svg"
+                            alt=""></span>
+                    <span class="LRm-5 aline">Your Library</span>
+                </div>
+                <div id="plus-svg" class="aline">
+                    <img src="svg-collection/left-main-svg/pluse.svg" alt="">
+                </div>
+            </div>
+            <div id="left-middle" class="border flex scroll-y">
+                <div class="song-cards arial-font flex border light-background round-border white-font p-10 aline">
+                    <div class="dp aline semicircle-border border flex dark-background">
+                        <img src="svg-collection/playbar/playlist-02-stroke-rounded.svg" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="line1 bold overflow">[song name]</div>
+                        <div class="line2 overflow">[artist name]</div>
+                    </div>
+                    <div class="play-btn aline">
+                        <img src="svg-collection/playbar/play-circle-02-stroke-rounded.svg" alt="">
+                    </div>
+                </div>
+                <div class="box1 arial-font flex border light-background round-border white-font p-10">
+                    <span class="line1 bold m-8">Create your first playlist</span>
+                    <span class="line2 m-8">It's easy, we'll help you</span>
+                    <div id="playlist-btn" class="btn border aline flex semicircle-border bold m-8 small">
+                        <span>Create playlist</span>
+                    </div>
+                </div>
+                <div class="box2 arial-font flex border light-background round-border white-font p-10">
+                    <span class="line1 bold m-8">Let's find some podcasts to follow</span>
+                    <span class="line2 m-8">We'll keep you updated on new episodes</span>
+                    <div id="podcasts-btn" class="btn border aline flex semicircle-border bold m-8 small">
+                        <span>Browse podcasts</span>
+                    </div>
+                </div>
+            </div>
+            <div id="left-bottom" class="border p-10 flex">
+                <div id="info" class="flex aline">
+                    <div class="grey-font m-8 arial-font">Legal</div>
+                    <div class="grey-font m-8 arial-font">Safety & Privacy Center</div>
+                    <div class="grey-font m-8 arial-font">Privacy Policy</div>
+                    <div class="grey-font m-8 arial-font">Cookies</div>
+                    <div class="grey-font m-8 arial-font">About Ads</div>
+                    <div class="grey-font m-8 arial-font">Accessiblity</div>
+                </div>
+                <div class="white-font m-8 arial-font">Cookies</div>
+                <div id="lang-btn" class="white-font bold arial-font m-8 border semicircle-border flex aline">
+                    <img class="LRm-5" src="svg-collection/left-main-svg/language.svg" alt="">
+                    <span id="english" class="LRm-5 aline">English</span>
+                </div>
+            </div>
+        </div>
+        <div id="right" class="border dark-background arial-font round-border flex-1">
+            <div class="nav flex">
+                <div id="nav-center" class="border flex flex-1">
+                    <div id="side-bar" class="light-background home border aline flex semicircle-border LRm-5 cursor-pointer"><img
+                            src="svg-collection/nav-svg/menu.svg" alt=""></div>
+                    <div class="light-background home border aline flex semicircle-border LRm-5"><img
+                            src="svg-collection/nav-svg/home.svg" alt=""></div>
+                    <div id="search-bar" class="flex border aline light-background semicircle-border LRm-5 flex-1">
+                        <div class="search flex">
+                            <div id="search-icon" class="light-background ">
+                                <img src="svg-collection/nav-svg/search.svg"
+                                    alt="">
+                            </div>
+                            <div class="input flex aline"><input type="text" name="" id=""
+                                    class="light-background bold grey-font arial-font"
+                                    placeholder="What do you want to play?">
+                            </div>
+                        </div>
+                        <div class="browser light-background flex"><img src="svg-collection/nav-svg/browser.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div id="nav-right" class="border flex arial-font grey-font bold small aline no-shrink">
+                    <div id="download-app" class="flex border aline LRm-5">
+                        <img src="svg-collection/nav-svg/download.svg" alt="">
+                        <span class="aline LRm-5">Install App</span>
+                    </div>
+                    <div id="signup-btn" class="border aline LRm-5">
+                        <span>Sign up</span>
+                    </div>
+                    <div id="login-btn" class=" btn border aline flex semicircle-border LRm-5">
+                        <span>Log in</span>
+                    </div>
+                </div>
+            </div>
+            <div id="right-body" class="scroll-y flex-1 flex">
+                <div id="artists" class="border Bm-25">
+                    <div class="heading flex border aline">
+                        <div class="white-font">
+                            <h2>Popular artists</h2>
+                        </div>
+                        <div class="grey-font small bold aline">Show all</div>
+                    </div>
+                    <div id="Artists" data-folder="Artists" class="list flex border scroll-x">
+                        <div data-folder="f1" class="card border round-border cursor-pointer">
+                            <div class="pic border semicircle-border m-10">
+                                <img id="face-holder" class="semicircle-border" src="songs/f1/fun.jpeg" alt="">
+                                <div id="hover" class="p-10 semicircle-border border">
+                                    <img src="svg-collection/right-main-svg/play.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="name border white-font m-10">[Artist-name]</div>
+                            <div class="grey-font small m-10">Artist</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="albums-singles" class="border Bm-25">
+                    <div class="heading flex border aline">
+                        <div class="white-font">
+                            <h2>Popular albums and singles</h2>
+                        </div>
+                        <div class="grey-font small bold aline">Show all</div>
+                    </div>
+                    <div data-folder="Try-Different" id="Try-Different" class="list flex border scroll-x">
+                        <div data-playlist="f2" class="card border round-border cursor-pointer">
+                            <div class="pic border semicircle-border m-10">
+                                <img id="face-holder" class="semicircle-border" src="songs/f1/fun.jpeg" alt="">
+                                <div id="hover" class="p-10 semicircle-border border">
+                                    <img src="svg-collection/right-main-svg/play.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="name border white-font m-10">[name]</div>
+                            <div class="grey-font small m-10">[Artist-name]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="playbar" class="border round-border flex aline flex-1">
+            <div id="playbar-pic" class="semicircle-border border"><img
+                    src="svg-collection/playbar/playlist-02-stroke-rounded.svg" alt=""></div>
+            <div id="playbar-info" class="border flex">
+                <div class="line1 arial-font white-font bold overflow">[Song Name]</div>
+                <div class="line2 arial-font overflow">[Artist Name]</div>
+            </div>
+            <div id="playbar-body" class="border flex-1">
+                <div id="upper-playbar" class="border flex">
+                    <div class="controle flex border">
+                        <div class="previous aline flex border"><img id="previous" class="aline flex cursor-pointer"
+                                src="svg-collection/playbar/previous-stroke-rounded.svg" alt=""></div>
+                        <div class="play-btn aline flex border"><img onclick="playPause(currentSong)" id="play"
+                                class="aline flex cursor-pointer" src="svg-collection/playbar/play-circle-02-stroke-rounded.svg"
+                                alt=""></div>
+                        <div class="next-btn aline flex border"><img id="next" class="aline flex cursor-pointer"
+                                src="svg-collection/playbar/next-stroke-rounded.svg" alt=""></div>
+                    </div>
+                    <div id="volume-controle" class="flex aline">
+                        <div id="volume-svg" class="flex aline LRm-5 cursor-pointer">
+                            <img src="svg-collection/playbar/volume-high-stroke-rounded.svg" alt="">
+                        </div>
+                        <div id="volume-box" class="flex border aline">
+                            <div id="volume-bar" class="border flex flex-1 semicircle-border cursor-pointer">
+                                <div id="volume-point" class="semicircle-border">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="volume-value" class="time border aline arial-font">
+                            100
+                        </div>
+                    </div>
+                </div>
+                <div id="lower-playbar" class="flex aline">
+                    <div id="current-time" class="time border aline arial-font">
+                        00:00
+                    </div>
+                    <div id="seek-box" class="flex-1 flex border">
+                        <div id="seek-bar" class="border flex flex-1 semicircle-border cursor-pointer">
+                            <div id="point" class="semicircle-border">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="duration" class="time border aline arial-font">
+                        00:00
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
