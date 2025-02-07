@@ -36,23 +36,28 @@
                         <img src="svg-collection/playbar/playlist-02-stroke-rounded.svg" alt="">
                     </div>
                     <div class="info">
-                        <div class="line1 bold overflow">[song name]</div>
-                        <div class="line2 overflow">[artist name]</div>
+                        <div class="song-name bold overflow">[song name]</div>
+                        <div class="artist-name overflow">[artist name]</div>
                     </div>
                     <div class="play-btn aline">
-                        <img src="svg-collection/playbar/play-circle-02-stroke-rounded.svg" alt="">
+                        <div class="animation">
+                            <div class="line1 line"></div>
+                            <div class="line2 line"></div>
+                            <div class="line3 line"></div>
+                            <div class="line4 line"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="box1 arial-font flex border light-background round-border white-font p-10">
-                    <span class="line1 bold m-8">Create your first playlist</span>
-                    <span class="line2 m-8">It's easy, we'll help you</span>
+                    <span class="song-name bold m-8">Create your first playlist</span>
+                    <span class="artist-name m-8">It's easy, we'll help you</span>
                     <div id="playlist-btn" class="btn border aline flex semicircle-border bold m-8 small">
                         <span>Create playlist</span>
                     </div>
                 </div>
                 <div class="box2 arial-font flex border light-background round-border white-font p-10">
-                    <span class="line1 bold m-8">Let's find some podcasts to follow</span>
-                    <span class="line2 m-8">We'll keep you updated on new episodes</span>
+                    <span class="song-name bold m-8">Let's find some podcasts to follow</span>
+                    <span class="artist-name m-8">We'll keep you updated on new episodes</span>
                     <div id="podcasts-btn" class="btn border aline flex semicircle-border bold m-8 small">
                         <span>Browse podcasts</span>
                     </div>
@@ -120,7 +125,7 @@
                     <div id="Artists" data-folder="Artists" class="list flex border scroll-x">
                         <div data-folder="f1" class="card border round-border cursor-pointer">
                             <div class="pic border semicircle-border m-10">
-                                <img id="face-holder" class="semicircle-border" src="songs/f1/fun.jpeg" alt="">
+                                <img id="face-holder" class="semicircle-border" src="" alt="">
                                 <div id="hover" class="p-10 semicircle-border border">
                                     <img src="svg-collection/right-main-svg/play.svg" alt="">
                                 </div>
@@ -140,7 +145,7 @@
                     <div data-folder="Try-Different" id="Try-Different" class="list flex border scroll-x">
                         <div data-playlist="f2" class="card border round-border cursor-pointer">
                             <div class="pic border semicircle-border m-10">
-                                <img id="face-holder" class="semicircle-border" src="songs/f1/fun.jpeg" alt="">
+                                <img id="face-holder" class="semicircle-border" src="" alt="">
                                 <div id="hover" class="p-10 semicircle-border border">
                                     <img src="svg-collection/right-main-svg/play.svg" alt="">
                                 </div>
@@ -157,8 +162,8 @@
             <div id="playbar-pic" class="semicircle-border border"><img
                     src="svg-collection/playbar/playlist-02-stroke-rounded.svg" alt=""></div>
             <div id="playbar-info" class="border flex">
-                <div class="line1 arial-font white-font bold overflow">[Song Name]</div>
-                <div class="line2 arial-font overflow">[Artist Name]</div>
+                <div class="song-name arial-font white-font bold overflow">[Song Name]</div>
+                <div class="artist-name arial-font overflow">[Artist Name]</div>
             </div>
             <div id="playbar-body" class="border flex-1">
                 <div id="upper-playbar" class="border flex">

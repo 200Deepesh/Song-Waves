@@ -8,6 +8,9 @@ let currentAudioElement = new Audio();
 let voluem = 1;
 
 function transformTime(seconds) {
+    if (isNaN(seconds)) {
+        return "00:00";
+    }
     let time = seconds - seconds % 1;
     let min = (time - time % 60) / 60;
     let sec = time % 60;
@@ -19,9 +22,26 @@ function transformTime(seconds) {
     }
 }
 
+function playPauseAnimation(id) {
+    let elements = Array.from(document.getElementById(id).getElementsByClassName("line"));
+    if (elements[0].classList.length > 1) {
+        for (const e of elements) {
+            e.classList.remove("line" + (elements.indexOf(e) + 1));
+        }
+    }
+    else {
+        for (const e of elements) {
+            e.classList.add("line" + (elements.indexOf(e) + 1));
+        }
+    }
+    //    document.getElementsByClassName("containor")[0].getElementsByClassName("dot")[0].classList.remove(dot1);
+}
+
+
+
 async function displayPlaylists() {
-    // let fetchFolders = await fetch("http://127.0.0.1:5500/songs"); 
-    let fetchFolders = await fetch("https://github.com/200Deepesh/Song-Waves/tree/main/songs");
+    let fetchFolders = await fetch("http://127.0.0.1:5500/songs");
+    // let fetchFolders = await fetch("https://github.com/200Deepesh/Song-Waves/tree/main/songs");
     let r1 = await fetchFolders.text();
     let div = document.createElement("div");
     div.innerHTML = r1;
@@ -33,12 +53,11 @@ async function displayPlaylists() {
             let div = document.createElement("div");
             div.innerHTML = r2;
             let playlists = div.getElementsByTagName("a");
-            for(playlist of playlists) {
-                if(playlist.href.includes(folder.href+"/")) {
+            for (playlist of playlists) {
+                if (playlist.href.includes(folder.href + "/")) {
                     let jsonFile = await fetch(playlist.href + "/metadata.json");
                     let json = await jsonFile.text();
                     let metaData = JSON.parse(json);
-                    console.log(JSON.parse(json));
                     let playlistCard = `
                                 <div data-playlist="${playlist.title}" class="card border round-border cursor-pointer">
                                     <div class="pic border semicircle-border m-10">
@@ -50,7 +69,6 @@ async function displayPlaylists() {
                                     <div class="name border white-font m-10">${metaData.title}</div>
                                     <div class="grey-font small m-10">${metaData.discription}</div>
                                 </div>`;
-                                console.log(folder.title);
                     document.getElementById(`${folder.title}`).insertAdjacentHTML("beforeend", playlistCard);
                 }
             }
@@ -58,7 +76,7 @@ async function displayPlaylists() {
     }
 }
 
-async function getSongs(folder,playlist) {
+async function getSongs(folder, playlist) {
     songs = {};
     songlist = [];
     let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/${playlist}`);
@@ -70,7 +88,7 @@ async function getSongs(folder,playlist) {
         if (element.href.endsWith(".mp3")) {
             let id = uniqe.toString(16);
             let link = element.href;
-            let songInfo = link.split("/")[link.split("/").length - 1].slice(0, -4).replaceAll("%20"," ");
+            let songInfo = link.split("/")[link.split("/").length - 1].slice(0, -4).replaceAll("%20", " ");
             let artist = "Artist";
             songs[id] = {
                 id: id,
@@ -81,7 +99,6 @@ async function getSongs(folder,playlist) {
             songlist.push(id);
             uniqe += 1;
         }
-        console.log(element);
     }
     currentSong = songlist[0];
     currentAudioElement.src = songs[currentSong].url;
@@ -96,32 +113,37 @@ async function displaySongs() {
         let songName = songs[song].name;
         let artistName = songs[song].artist;
         let id = songs[song].id;
-        songCard.innerHTML = `<div class="song-cards arial-font flex border light-background round-border white-font p-10 aline">
+        songCard.innerHTML = `<div id="${id}" class="song-cards arial-font flex border light-background round-border white-font p-10 aline">
         <div class="dp aline semicircle-border border flex dark-background">
             <img src="svg-collection/playbar/playlist-02-stroke-rounded.svg" alt="">
         </div>
         <div class="info">
-        <div class="line1 bold overflow">${songName}</div>
-        <div class="line2 overflow">${artistName}</div>
+        <div class="song-name bold overflow">${songName}</div>
+        <div class="artist-name overflow">${artistName}</div>
         </div>
         <div class="play-btn aline cursor-pointer">
-            <img id="${id}" src="svg-collection/playbar/play-circle-02-stroke-rounded.svg" alt="play">
+    
+            <div class="animation">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+            </div>
         </div>
         </div>`;
         box.insertAdjacentElement("afterbegin", songCard);
+        let element = document.getElementById(song);
+        element.addEventListener("click", () => {
+            playPause(currentSong);
+            playPause(song);
+        })
     }
+
 }
 
 async function addEvent() {
-    let songlist = arguments[0];
-    for (const song of songlist) {
-        let element = document.getElementById(song);
-        element.addEventListener("click", playPause.bind(null, song));
-    }
-
     // ADD EVENT LISTENER TO CURRENT AUDIO ELEMENT
     currentAudioElement.addEventListener("timeupdate", () => {
-        // console.log(transformTime( "current time:",myAudioElement.currentTime))
         let currentTime = document.getElementById("current-time");
         let duration = document.getElementById("duration");
         currentTime.innerHTML = transformTime(currentAudioElement.currentTime);
@@ -130,6 +152,9 @@ async function addEvent() {
     });
     currentAudioElement.addEventListener("ended", (resolve) => {
         setTimeout(() => {
+            let element = document.getElementById(currentSong);
+            element.src = "svg-collection/playbar/play-circle-02-stroke-rounded.svg";
+            playPauseAnimation(currentSong);
             playNextSong(currentSong);
         }, 2000
         )
@@ -185,7 +210,7 @@ async function addEvent() {
         document.getElementById("volume-value").innerHTML = (offset * 100) - (offset * 100) % 1;
     })
 
-    
+
     const volumeBtn = document.querySelector("#volume-svg > img");
     volumeBtn.addEventListener("click", (event) => {
         if (currentAudioElement.muted) {
@@ -201,7 +226,6 @@ async function addEvent() {
         else {
             volumebox.style.zIndex = "";
         }
-        console.log(currentAudioElement.volume);
     })
 }
 
@@ -216,17 +240,17 @@ function playNextSong(id, event) {
         let nextSong = songlist[songlist.indexOf(id) + 1];
         id = nextSong;
     }
-    console.log(id);
     playPause(id.toString());
 }
 
 function displayPlaybar() {
-    
+
 }
 
 async function playPause(id, event) {
+    console.log(id, "playPause");
     const element = document.getElementById(id);
-    
+
     const info = document.getElementById("playbar-info").getElementsByTagName("div");
     const playbtn = document.getElementById("play");
     info[0].innerHTML = songs[id].name;
@@ -237,7 +261,9 @@ async function playPause(id, event) {
             currentSong = id;
         }
         currentAudioElement.volume = voluem;
-        document.getElementById(currentSong).src = "svg-collection/playbar/play-circle-02-stroke-rounded.svg";
+        // document.getElementById(currentSong).src = "svg-collection/playbar/play-circle-02-stroke-rounded.svg";
+        // playPauseAnimation(currentSong);
+        playPauseAnimation(id);
         playPromise = await currentAudioElement.play();
         element.src = "svg-collection/playbar/pause-circle-stroke-rounded.svg";
         element.alt = "pause";
@@ -245,8 +271,9 @@ async function playPause(id, event) {
     }
     else {
         currentAudioElement.pause();
-        element.src = "svg-collection/playbar/play-circle-02-stroke-rounded.svg";
-        element.alt = "play";
+        // element.src = "svg-collection/playbar/play-circle-02-stroke-rounded.svg";
+        playPauseAnimation(id);
+        // element.alt = "play";
         playbtn.src = "svg-collection/playbar/play-circle-02-stroke-rounded.svg";
     }
 }
@@ -256,44 +283,45 @@ async function main() {
     await displayPlaylists();
     const cards = document.getElementsByClassName("card");
     for (const e of cards) {
-        
+
         e.addEventListener("mouseover", (event) => {
             event.currentTarget.style = "background: #1f1f1f;";
             let hover = e.querySelector("#hover");
             hover.style.opacity = "1";
             hover.style.bottom = "0";
         })
-        
+
         e.addEventListener("mouseout", (event) => {
             event.currentTarget.style = "";
             let hover = e.querySelector("#hover");
             hover.style.opacity = "";
             hover.style.bottom = "";
         })
-        
+
         e.addEventListener("click", async (event) => {
             if (currentAudioElement) {
                 currentAudioElement.pause();
             }
             const playlist = event.currentTarget.dataset.playlist;
             const folder = event.currentTarget.parentElement.dataset.folder;
-            console.log(folder);
             await getSongs(folder, playlist);
             await displaySongs(songlist);
-            await addEvent(songlist);
             let playbar = document.getElementById("playbar");
             playbar.style.bottom = 0;
             document.getElementById("right-body").style.height = "calc(100% - 45px - 5rem)"
             playPause(currentSong);
+
         })
     }
+    await addEvent(songlist);
+
     // ADDING EVENT LISTENER TO SIDE-BAR
     const sidebar = document.getElementById("side-bar");
     sidebar.addEventListener("click", (event) => {
         let left = document.getElementById("left");
         left.style.left = 0;
     })
-    
+
     // ADDING EVENT LISTENER TO CANCLE BUTTON 
     const cancle = document.getElementById("cancle-svg");
     cancle.addEventListener("click", (event) => {

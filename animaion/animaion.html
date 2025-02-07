@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .animation {
+            display: flex;
+            background-color: black;
+            height: 30px;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+        .line {
+            height: 2px;
+            margin: 2px;
+            border: 2px solid white;
+            border-radius: 10px;
+
+        }
+        
+        .line1 {
+            animation: playAnimation .5s linear 0.125s infinite alternate ;
+        }
+        .line2 {
+            animation: playAnimation .5s linear 0.25s infinite alternate ;
+        }
+        .line3 {
+            animation: playAnimation .5s linear 0.375s infinite alternate ;
+        }
+        .line4 {
+            animation: playAnimation .5s linear 0.5s infinite alternate ;
+        }
+        
+        @keyframes playAnimation {
+            from {height: 2px;}
+            to {height: 20px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="animation">
+        <div class="line1 line"></div>
+        <div class="line2 line"></div>
+        <div class="line3 line"></div>
+        <div class="line4 line"></div>
+    </div>
+</body>
+</html>

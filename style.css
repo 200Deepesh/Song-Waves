@@ -163,7 +163,7 @@ input {
     margin: 10px 7px;
 }
 
-.line2 {
+.artist-name {
     font-size: 0.8rem;
     font-weight: 400;
 }
@@ -200,12 +200,12 @@ input {
     height: 30px;
 }
 
-.line1 {
+.song-name {
     font-size: 0.8rem;
     margin: 5px;
 }
 
-.line2 {
+.artist-name {
     font-size: 0.7rem;
     margin: 5px;
     color: rgb(239, 239, 239);
@@ -503,4 +503,38 @@ input {
         z-index: -2;
     }
 
+}
+
+
+.animation {
+    display: flex;
+    /* background-color: black; */
+    height: 30px;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.line {
+    height: 2px;
+    margin: 2px;
+    border: 2px solid white;
+    border-radius: 10px;
+
+}
+
+.line1 {
+    animation: playAnimation .5s linear 0.125s infinite alternate ;
+}
+.line2 {
+    animation: playAnimation .5s linear 0.25s infinite alternate ;
+}
+.line3 {
+    animation: playAnimation .5s linear 0.375s infinite alternate ;
+}
+.line4 {
+    animation: playAnimation .5s linear 0.5s infinite alternate ;
+}
+
+@keyframes playAnimation {
+    from {height: 2px;}
+    to {height: 20px;}
 }
