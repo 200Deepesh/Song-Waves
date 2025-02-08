@@ -373,7 +373,10 @@ input {
 #volume-box {
     width: 100px;
     padding-left: 5px;
-    z-index: 0;
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    z-index: -2;
 }
 
 #volume-svg>img {
@@ -385,11 +388,14 @@ input {
 }
 
 #volume-controle {
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 11.25%;
 }
 
 #upper-playbar {
     justify-content: space-around;
+    position: relative;
 }
 
 #point {
@@ -496,23 +502,15 @@ input {
         padding: 0;
     }
 
-    #volume-box {
-        position: absolute;
-        top: -1.5rem;
-        right: 5px;
-        z-index: -2;
-    }
-
 }
 
 
 .animation {
     display: flex;
-    /* background-color: black; */
     height: 30px;
-    flex-direction: row-reverse;
     align-items: center;
 }
+
 .line {
     height: 2px;
     margin: 2px;
@@ -522,19 +520,27 @@ input {
 }
 
 .line1 {
-    animation: playAnimation .5s linear 0.125s infinite alternate ;
+    animation: playAnimation .5s linear 0.125s infinite alternate;
 }
+
 .line2 {
-    animation: playAnimation .5s linear 0.25s infinite alternate ;
+    animation: playAnimation .5s linear 0.25s infinite alternate;
 }
+
 .line3 {
-    animation: playAnimation .5s linear 0.375s infinite alternate ;
+    animation: playAnimation .5s linear 0.375s infinite alternate;
 }
+
 .line4 {
-    animation: playAnimation .5s linear 0.5s infinite alternate ;
+    animation: playAnimation .5s linear 0.5s infinite alternate;
 }
 
 @keyframes playAnimation {
-    from {height: 2px;}
-    to {height: 20px;}
+    from {
+        height: 2px;
+    }
+
+    to {
+        height: 20px;
+    }
 }

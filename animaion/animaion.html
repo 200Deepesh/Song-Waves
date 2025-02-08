@@ -21,16 +21,20 @@
         }
         
         .line1 {
-            animation: playAnimation .5s linear 0.125s infinite alternate ;
+            animation: playAnimation .5s 0.125s infinite alternate ;
         }
         .line2 {
-            animation: playAnimation .5s linear 0.25s infinite alternate ;
+            animation: playAnimation .5s 0.25s infinite alternate ;
         }
         .line3 {
-            animation: playAnimation .5s linear 0.375s infinite alternate ;
+            animation: playAnimation .5s 0.375s infinite alternate ;
         }
         .line4 {
-            animation: playAnimation .5s linear 0.5s infinite alternate ;
+            animation: playAnimation .5s 0.5s infinite alternate ;
+        }
+
+        .time {
+            animation-timing-function: ease;
         }
         
         @keyframes playAnimation {
@@ -41,10 +45,10 @@
 </head>
 <body>
     <div class="animation">
-        <div class="line1 line"></div>
-        <div class="line2 line"></div>
-        <div class="line3 line"></div>
-        <div class="line4 line"></div>
+        <div class="line1 line time"></div>
+        <div class="line2 line time"></div>
+        <div class="line3 line time"></div>
+        <div class="line4 line time"></div>
     </div>
 </body>
 </html>
