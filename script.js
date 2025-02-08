@@ -131,7 +131,7 @@ async function displaySongs() {
             </div>
         </div>
         </div>`;
-        box.insertAdjacentElement("afterbegin", songCard);
+        box.insertAdjacentElement("beforeend", songCard);
         let element = document.getElementById(song);
         element.addEventListener("click", () => {
             playPause(currentSong);
