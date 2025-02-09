@@ -367,18 +367,20 @@ input {
 
 #volume-bar {
     justify-content: flex-end;
+    align-self: center;
 }
 
 #volume-box {
     width: 100px;
     padding-left: 5px;
     position: absolute;
-    top: -1rem;
-    right: 0;
+    top: -2rem;
+    right: -30%;
     z-index: -2;
+    align-self: center;
 }
 
-#volume-svg>img {
+#volume-svg>img, #mute-btn>img, #flow img{
     height: 1.2rem;
 }
 
@@ -388,8 +390,14 @@ input {
 
 #volume-controle {
     position: absolute;
-    right: 0;
-    top: 11.25%;
+    right: 2.5%;
+    top: 18%;
+}
+
+#flow {
+    position: absolute;
+    left: 5%;
+    align-self: center;
 }
 
 #upper-playbar {
@@ -501,6 +509,9 @@ input {
         padding: 0;
     }
 
+    #volume-svg{
+        margin: 0 2px;
+    }
 }
 
 

@@ -167,6 +167,9 @@
             </div>
             <div id="playbar-body" class="border flex-1">
                 <div id="upper-playbar" class="border flex">
+                    <div id="flow" class="flex aline border cursor-pointer">
+                            <img id="flow-svg" data-flow="ordered" src="svg-collection/playbar/left-to-right-list-dash-stroke-rounded.svg" alt="">
+                    </div>
                     <div class="controle flex border">
                         <div class="previous aline flex border"><img id="previous" class="aline flex cursor-pointer"
                                 src="svg-collection/playbar/previous-stroke-rounded.svg" alt=""></div>
@@ -177,6 +180,9 @@
                                 src="svg-collection/playbar/next-stroke-rounded.svg" alt=""></div>
                     </div>
                     <div id="volume-controle" class="flex aline border">
+                        <div id="mute-btn" class="flex aline cursor-pointer border">
+                            <img src="svg-collection/playbar/mic-01-stroke-rounded.svg" alt="">
+                        </div>
                         <div id="volume-svg" class="flex aline LRm-5 cursor-pointer border">
                             <img src="svg-collection/playbar/volume-high-stroke-rounded.svg" alt="">
                         </div>
@@ -185,9 +191,9 @@
                                 <div id="volume-point" class="semicircle-border">
                                 </div>
                             </div>
-                        </div>
-                        <div id="volume-value" class="time border aline arial-font">
-                            100
+                            <div id="volume-value" class="time border aline arial-font">
+                                100
+                            </div>
                         </div>
                     </div>
                 </div>

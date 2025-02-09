@@ -6,6 +6,7 @@ let currentSong;
 let playPromise;
 let currentAudioElement = new Audio();
 let voluem = 1;
+let currentFlow = "ordered";
 
 function transformTime(seconds) {
     if (isNaN(seconds)) {
@@ -210,15 +211,9 @@ async function addEvent() {
         document.getElementById("volume-value").innerHTML = (offset * 100) - (offset * 100) % 1;
     })
 
-
+    // ADD EVENT LISTENER TO VOLUEM BUTTON 
     const volumeBtn = document.querySelector("#volume-svg > img");
     volumeBtn.addEventListener("click", (event) => {
-        if (currentAudioElement.muted) {
-            currentAudioElement.muted = false;
-        }
-        else {
-            currentAudioElement.muted = true;
-        }
         const volumebox = document.getElementById("volume-box");
         if (!volumebox.style.zIndex) {
             volumebox.style.zIndex = "2";
@@ -227,24 +222,72 @@ async function addEvent() {
             volumebox.style.zIndex = "";
         }
     })
+
+    // ADD EVENT LISTENER TO MUTE BUTTON 
+    const muteBtn = document.querySelector("#mute-btn > img");
+    muteBtn.addEventListener("click", (event) => {
+        if (currentAudioElement.muted) {
+            currentAudioElement.muted = false;
+            event.currentTarget.src = "svg-collection/playbar/mic-01-stroke-rounded.svg"
+        }
+        else {
+            currentAudioElement.muted = true;
+            event.currentTarget.src = "svg-collection/playbar/mic-off-01-stroke-rounded.svg"
+        }
+    })
+
+    const flowBtn = document.getElementById("flow-svg");
+    flow.addEventListener("click", (event)=>{
+        // const flow = flowBtn.dataset.flow;
+        if(currentFlow == "ordered"){
+            currentFlow = "shuffle";
+            flowBtn.src = "svg-collection/playbar/shuffle-stroke-rounded.svg";
+        }
+        else if(currentFlow == "shuffle") {
+            currentFlow = "loop";            
+            flowBtn.src = "svg-collection/playbar/arrow-reload-horizontal-stroke-rounded.svg";
+            currentAudioElement.loop = true;
+        }
+        else {
+            currentFlow = "ordered";            
+            flowBtn.src = "svg-collection/playbar/left-to-right-list-dash-stroke-rounded.svg";
+            currentAudioElement.loop = false;
+        }
+        console.log(currentFlow);
+    })
 }
 
 function playNextSong(id, event) {
     if (!currentAudioElement.paused) {
         playPause(id);
     }
-    if (songlist.indexOf(id) == songlist.length - 1) {
-        id = songlist[0];
+    if (currentFlow == "shuffle"){
+        let random = Math.round(Math.random()*(songlist.length-1));
+        if(songlist[songlist.indexOf(id)] == songlist[random]){
+            if (songlist.indexOf(id) == songlist.length - 1) {
+                id = songlist[0];
+            }
+            else {
+                let nextSong = songlist[songlist.indexOf(id) + 1];
+                id = nextSong;
+            }
+            console.log(random);
+            console.log("repeat");
+        }
+        else {
+            id = songlist[random];
+        }
     }
     else {
-        let nextSong = songlist[songlist.indexOf(id) + 1];
-        id = nextSong;
+        if (songlist.indexOf(id) == songlist.length - 1) {
+            id = songlist[0];
+        }
+        else {
+            let nextSong = songlist[songlist.indexOf(id) + 1];
+            id = nextSong;
+        }
     }
     playPause(id.toString());
-}
-
-function displayPlaybar() {
-
 }
 
 async function playPause(id, event) {
