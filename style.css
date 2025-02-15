@@ -153,6 +153,7 @@ input {
 #left-middle {
     height: 63%;
     flex-shrink: 1;
+    position: relative;
 }
 
 .box1,

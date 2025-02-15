@@ -291,9 +291,8 @@ function playNextSong(id, event) {
 }
 
 async function playPause(id, event) {
-    console.log(id, "playPause");
+    // console.log(id, "playPause");
     const element = document.getElementById(id);
-
     const info = document.getElementById("playbar-info").getElementsByTagName("div");
     const playbtn = document.getElementById("play");
     info[0].innerHTML = songs[id].name;
@@ -304,8 +303,7 @@ async function playPause(id, event) {
             currentSong = id;
         }
         currentAudioElement.volume = voluem;
-        // document.getElementById(currentSong).src = "svg-collection/playbar/play-circle-02-stroke-rounded.svg";
-        // playPauseAnimation(currentSong);
+        document.getElementById("left-middle").scrollTop = element.offsetTop;
         playPauseAnimation(id);
         playPromise = await currentAudioElement.play();
         element.src = "svg-collection/playbar/pause-circle-stroke-rounded.svg";
