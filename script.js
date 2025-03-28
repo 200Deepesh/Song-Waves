@@ -5,7 +5,7 @@ let songlist;
 let currentSong;
 let playPromise;
 let currentAudioElement = new Audio();
-let voluem = 1;
+let volume = 1;
 let currentFlow = "ordered";
 
 function transformTime(seconds) {
@@ -149,7 +149,11 @@ async function addEvent() {
         let duration = document.getElementById("duration");
         currentTime.innerHTML = transformTime(currentAudioElement.currentTime);
         duration.innerHTML = transformTime(currentAudioElement.duration);
-        document.getElementById("point").style.left = (currentAudioElement.currentTime / currentAudioElement.duration) * 100 + "%";
+        // console.log("scale",(document.getElementById("point").style.scale == "" || document.getElementById("point").style.scale == 1))
+        if((document.getElementById("point").style.scale == "" || document.getElementById("point").style.scale == 1)){
+            document.getElementById("point").style.left = (currentAudioElement.currentTime / currentAudioElement.duration) * 100 + "%";
+        }
+        
     });
     currentAudioElement.addEventListener("ended", (resolve) => {
         setTimeout(() => {
@@ -186,32 +190,70 @@ async function addEvent() {
     });
 
     // ADDING EVENT LISTENER TO SEEK-BAR
+    let pointPos = 0;
     const seekbar = document.getElementById("seek-bar");
-    seekbar.addEventListener("click", (event) => {
-        let point = document.getElementById("point");
-        let offset = (event.offsetX / seekbar.clientWidth);
-        point.style.left = offset * 100 + "%";
-        currentAudioElement.currentTime = currentAudioElement.duration * offset;
+    const point = document.getElementById("point");
+    point.addEventListener("mousedown", (e) => {
+        e.preventDefault()
+        point.style.scale = 1.2;
+        document.onmouseup = (e) => {
+            document.onmouseup = null;
+            document.onmousemove = null;
+            point.style.scale = 1;
+            let offset = (point.offsetLeft + 5) / seekbar.offsetWidth;
+            currentAudioElement.currentTime = currentAudioElement.duration * offset;
+        }
+        document.onmousemove = (e) => {
+            e.preventDefault();
+            let barwidth = seekbar.offsetWidth;
+            pointPos = e.clientX - seekbar.getBoundingClientRect().left;
+            if (pointPos <= 0) {
+                pointPos = 0;
+            }
+            else if (pointPos >= barwidth) {
+                pointPos = barwidth;
+            }
+            point.style.left = pointPos - 5 + "px";
+        }
     })
 
     // ADDING EVENT LISTENER TO VOLUME-BAR
     const volumebar = document.getElementById("volume-bar");
-    volumebar.addEventListener("click", (event) => {
-        let point = document.getElementById("volume-point");
-        let offset = (event.offsetX / volumebar.clientWidth);
-        if (offset > 1) {
-            offset = 1;
+    const volumePoint = document.getElementById("volume-point");
+    let volumePointPos = 0;
+    volumePoint.addEventListener("mousedown", (e) => {
+        e.preventDefault()
+        volumePoint.style.scale = 1.2;
+        document.onmouseup = (e) => {
+            document.onmouseup = null;
+            document.onmousemove = null;
+            volumePoint.style.scale = 1;
+            volume = (volumePoint.offsetLeft+7)/volumebar.offsetWidth;
+            if(volume >= 1){
+                volume = 1;
+            }
+            else if(volume <= 0){
+                volume = 0;
+            }
+            currentAudioElement.volume = volume;
+            document.getElementById("volume-value").innerHTML = volume*100- volume*100%1;
         }
-        else if (offset < 0) {
-            offset = 0;
+        document.onmousemove = (e) => {
+            e.preventDefault();
+            let barwidth = volumebar.offsetWidth;
+            volumePointPos = -(e.clientX - volumebar.getBoundingClientRect().right);
+            if (volumePointPos <= 0) {
+                volumePointPos = 0;
+            }
+            else if (volumePointPos >= barwidth) {
+                volumePointPos = barwidth;
+            }
+            volumePoint.style.right = volumePointPos - 5 + "px";
         }
-        point.style.right = ((1 - offset) * 100) + "%";
-        voluem = offset;
-        currentAudioElement.volume = voluem;
-        document.getElementById("volume-value").innerHTML = (offset * 100) - (offset * 100) % 1;
     })
+    
 
-    // ADD EVENT LISTENER TO VOLUEM BUTTON 
+    // ADD EVENT LISTENER TO VOLUME BUTTON 
     const volumeBtn = document.querySelector("#volume-svg > img");
     volumeBtn.addEventListener("click", (event) => {
         const volumebox = document.getElementById("volume-box");
@@ -237,19 +279,19 @@ async function addEvent() {
     })
 
     const flowBtn = document.getElementById("flow-svg");
-    flow.addEventListener("click", (event)=>{
+    flow.addEventListener("click", (event) => {
         // const flow = flowBtn.dataset.flow;
-        if(currentFlow == "ordered"){
+        if (currentFlow == "ordered") {
             currentFlow = "shuffle";
             flowBtn.src = "svg-collection/playbar/shuffle-stroke-rounded.svg";
         }
-        else if(currentFlow == "shuffle") {
-            currentFlow = "loop";            
+        else if (currentFlow == "shuffle") {
+            currentFlow = "loop";
             flowBtn.src = "svg-collection/playbar/arrow-reload-horizontal-stroke-rounded.svg";
             currentAudioElement.loop = true;
         }
         else {
-            currentFlow = "ordered";            
+            currentFlow = "ordered";
             flowBtn.src = "svg-collection/playbar/left-to-right-list-dash-stroke-rounded.svg";
             currentAudioElement.loop = false;
         }
@@ -261,9 +303,9 @@ function playNextSong(id, event) {
     if (!currentAudioElement.paused) {
         playPause(id);
     }
-    if (currentFlow == "shuffle"){
-        let random = Math.round(Math.random()*(songlist.length-1));
-        if(songlist[songlist.indexOf(id)] == songlist[random]){
+    if (currentFlow == "shuffle") {
+        let random = Math.round(Math.random() * (songlist.length - 1));
+        if (songlist[songlist.indexOf(id)] == songlist[random]) {
             if (songlist.indexOf(id) == songlist.length - 1) {
                 id = songlist[0];
             }
@@ -302,7 +344,7 @@ async function playPause(id, event) {
             currentAudioElement.src = songs[id].url;
             currentSong = id;
         }
-        currentAudioElement.volume = voluem;
+        currentAudioElement.volume = volume;
         document.getElementById("left-middle").scrollTop = element.offsetTop;
         playPauseAnimation(id);
         playPromise = await currentAudioElement.play();
