@@ -1,4 +1,5 @@
 console.log("lets start");
+let songData = {};
 let songs;
 let uniqe = 256;
 let songlist;
@@ -7,6 +8,18 @@ let playPromise;
 let currentAudioElement = new Audio();
 let volume = 1;
 let currentFlow = "ordered";
+
+function getSongById(id) {
+    for (const song of songs) {
+        if (song.id == id) {
+            return song;
+        }
+    }
+}
+
+function getSongURL(id) {
+    return `songs/${id}.m4a`
+}
 
 function transformTime(seconds) {
     if (isNaN(seconds)) {
@@ -38,98 +51,75 @@ function playPauseAnimation(id) {
     //    document.getElementsByClassName("containor")[0].getElementsByClassName("dot")[0].classList.remove(dot1);
 }
 
-
-
-async function displayPlaylists() {
-    let fetchFolders = await fetch("http://127.0.0.1:5500/songs");
-    // let fetchFolders = await fetch("https://github.com/200Deepesh/Song-Waves/tree/main/songs");
-    let r1 = await fetchFolders.text();
-    let div = document.createElement("div");
-    div.innerHTML = r1;
-    let folders = div.getElementsByTagName("a");
-    for (const folder of folders) {
-        if (folder.href.includes("/songs/")) {
-            let fetchPlaylist = await fetch(folder.href);
-            let r2 = await fetchPlaylist.text();
-            let div = document.createElement("div");
-            div.innerHTML = r2;
-            let playlists = div.getElementsByTagName("a");
-            for (playlist of playlists) {
-                if (playlist.href.includes(folder.href + "/")) {
-                    let jsonFile = await fetch(playlist.href + "/metadata.json");
-                    let json = await jsonFile.text();
-                    let metaData = JSON.parse(json);
-                    let playlistCard = `
-                                <div data-playlist="${playlist.title}" class="card border round-border cursor-pointer">
-                                    <div class="pic border semicircle-border m-10">
-                                        <img id="face-holder" class="semicircle-border" src="${metaData.faceCover}" alt="">
-                                        <div id="hover" class="p-10 semicircle-border border">
-                                            <img src="svg-collection/right-main-svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="name border white-font m-10">${metaData.title}</div>
-                                    <div class="grey-font small m-10">${metaData.discription}</div>
-                                </div>`;
-                    document.getElementById(`${folder.title}`).insertAdjacentHTML("beforeend", playlistCard);
-                }
-            }
+async function displayPlaylistsTest() {
+    let res = await fetch("./songData.json");
+    songData = await res.json();
+    for (const type in songData) {
+        let typeObj = songData[type];
+        for (const playlist in typeObj) {
+            let playlistObj = typeObj[playlist];
+            let playlistCard = `
+            <div data-playlist="${playlist}" class="card border round-border cursor-pointer">
+            <div class="pic border semicircle-border m-10">
+            <img id="face-holder" class="semicircle-border" src="${playlistObj.image.url}" alt="">
+            <div class="hover p-10 semicircle-border border">
+            <img src="svg-collection/right-main-svg/play.svg" alt="">
+            </div>
+            </div>
+            <div class="name border white-font m-10">${playlistObj.name}</div>
+            <div class="grey-font small m-10">${playlistObj.type}</div>
+            </div>`;
+            document.getElementById(`${type}`).insertAdjacentHTML("beforeend", playlistCard);
         }
     }
 }
 
-async function getSongs(folder, playlist) {
-    songs = {};
+async function getSongsTest(type, playlist) {
+    console.log(type, playlist)
     songlist = [];
-    let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/${playlist}`);
-    let response = await a.text();
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    let elements = div.getElementsByTagName("a");
-    for (const element of elements) {
-        if (element.href.endsWith(".mp3")) {
-            let id = uniqe.toString(16);
-            let link = element.href;
-            let songInfo = link.split("/")[link.split("/").length - 1].slice(0, -4).replaceAll("%20", " ");
-            let artist = "Artist";
-            songs[id] = {
-                id: id,
-                url: link,
-                name: songInfo,
-                artist: artist,
-            }
-            songlist.push(id);
-            uniqe += 1;
-        }
+    songs = songData[type][playlist].tracks
+    console.log(songs);
+    for (let song of songs) {
+        songlist.push(song.id)
+        console.log(song)
     }
+    console.log(songlist)
     currentSong = songlist[0];
-    currentAudioElement.src = songs[currentSong].url;
+    currentAudioElement.src = getSongURL(currentSong);
+    console.log("songID", currentSong)
+    console.log("songlist", songlist)
 }
 
-async function displaySongs() {
+async function displaySongsTest() {
     let songlist = arguments[0];
     let box = document.getElementById("left-middle");
     box.innerHTML = "";
     for (const song of songlist) {
+        let metaData = getSongById(song)
         let songCard = document.createElement("div");
-        let songName = songs[song].name;
-        let artistName = songs[song].artist;
-        let id = songs[song].id;
+        let songName = metaData.name;
+        let artistName = metaData.artists.reduce((acc, curr) => {
+            acc += curr.name + ", "
+            return acc;
+        }, "");
+        let imgURL = metaData.image.url
+        let id = metaData.id;
         songCard.innerHTML = `<div id="${id}" class="song-cards arial-font flex border light-background round-border white-font p-10 aline">
         <div class="dp aline semicircle-border border flex dark-background">
-            <img src="svg-collection/playbar/playlist-02-stroke-rounded.svg" alt="">
+        <img src="${imgURL}" alt="">
         </div>
         <div class="info">
         <div class="song-name bold overflow">${songName}</div>
         <div class="artist-name overflow">${artistName}</div>
         </div>
         <div class="play-btn aline cursor-pointer">
-    
-            <div class="animation">
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-            </div>
+        
+        <div class="animation">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        </div>
         </div>
         </div>`;
         box.insertAdjacentElement("beforeend", songCard);
@@ -150,10 +140,10 @@ async function addEvent() {
         currentTime.innerHTML = transformTime(currentAudioElement.currentTime);
         duration.innerHTML = transformTime(currentAudioElement.duration);
         // console.log("scale",(document.getElementById("point").style.scale == "" || document.getElementById("point").style.scale == 1))
-        if((document.getElementById("point").style.scale == "" || document.getElementById("point").style.scale == 1)){
+        if ((document.getElementById("point").style.scale == "" || document.getElementById("point").style.scale == 1)) {
             document.getElementById("point").style.left = (currentAudioElement.currentTime / currentAudioElement.duration) * 100 + "%";
         }
-        
+
     });
     currentAudioElement.addEventListener("ended", (resolve) => {
         setTimeout(() => {
@@ -161,8 +151,7 @@ async function addEvent() {
             element.src = "svg-collection/playbar/play-circle-02-stroke-rounded.svg";
             playPauseAnimation(currentSong);
             playNextSong(currentSong);
-        }, 2000
-        )
+        }, 2000)
         return resolve;
     })
 
@@ -228,15 +217,15 @@ async function addEvent() {
             document.onmouseup = null;
             document.onmousemove = null;
             volumePoint.style.scale = 1;
-            volume = (volumePoint.offsetLeft+7)/volumebar.offsetWidth;
-            if(volume >= 1){
+            volume = (volumePoint.offsetLeft + 7) / volumebar.offsetWidth;
+            if (volume >= 1) {
                 volume = 1;
             }
-            else if(volume <= 0){
+            else if (volume <= 0) {
                 volume = 0;
             }
             currentAudioElement.volume = volume;
-            document.getElementById("volume-value").innerHTML = volume*100- volume*100%1;
+            document.getElementById("volume-value").innerHTML = volume * 100 - volume * 100 % 1;
         }
         document.onmousemove = (e) => {
             e.preventDefault();
@@ -251,7 +240,7 @@ async function addEvent() {
             volumePoint.style.right = volumePointPos - 5 + "px";
         }
     })
-    
+
 
     // ADD EVENT LISTENER TO VOLUME BUTTON 
     const volumeBtn = document.querySelector("#volume-svg > img");
@@ -337,11 +326,19 @@ async function playPause(id, event) {
     const element = document.getElementById(id);
     const info = document.getElementById("playbar-info").getElementsByTagName("div");
     const playbtn = document.getElementById("play");
-    info[0].innerHTML = songs[id].name;
-    info[1].innerHTML = songs[id].artist;
+    const playbarPic = document.querySelector("#playbar-pic > img");
+    // info[0].innerHTML = songs[id].name;
+    // info[1].innerHTML = songs[id].artist;
+    info[0].innerHTML = getSongById(id).name;
+    info[1].innerHTML = getSongById(id).artists.reduce((acc, curr) => {
+        acc += curr.name + ", "
+        return acc;
+    }, "");
+    playbarPic.src = getSongById(id).image.url
     if (currentAudioElement.paused) {
         if (currentSong != id) {
-            currentAudioElement.src = songs[id].url;
+            // currentAudioElement.src = songs[id].url;
+            currentAudioElement.src = getSongURL(id);
             currentSong = id;
         }
         currentAudioElement.volume = volume;
@@ -363,20 +360,22 @@ async function playPause(id, event) {
 
 
 async function main() {
-    await displayPlaylists();
+    // await displayPlaylists();
+    await displayPlaylistsTest();
     const cards = document.getElementsByClassName("card");
     for (const e of cards) {
-
-        e.addEventListener("mouseover", (event) => {
+        e.addEventListener("mouseenter", (event) => {
+            console.log(event.target == event.currentTarget);
             event.currentTarget.style = "background: #1f1f1f;";
-            let hover = e.querySelector("#hover");
+            let hover = e.querySelector(".hover");
             hover.style.opacity = "1";
             hover.style.bottom = "0";
+
         })
 
-        e.addEventListener("mouseout", (event) => {
+        e.addEventListener("mouseleave", (event) => {
             event.currentTarget.style = "";
-            let hover = e.querySelector("#hover");
+            let hover = e.querySelector(".hover");
             hover.style.opacity = "";
             hover.style.bottom = "";
         })
@@ -386,9 +385,11 @@ async function main() {
                 currentAudioElement.pause();
             }
             const playlist = event.currentTarget.dataset.playlist;
-            const folder = event.currentTarget.parentElement.dataset.folder;
-            await getSongs(folder, playlist);
-            await displaySongs(songlist);
+            const type = event.currentTarget.parentElement.dataset.type;
+            // await getSongs(type, playlist);
+            await getSongsTest(type, playlist);
+            // await displaySongs(songlist);
+            await displaySongsTest(songlist);
             let playbar = document.getElementById("playbar");
             playbar.style.bottom = 0;
             document.getElementById("right-body").style.height = "calc(100% - 45px - 5rem)"

@@ -1,0 +1,242 @@
+{
+    "Artists": {
+        "arijit-singh": {
+            "followers": {
+                "href": null,
+                "total": 140987602
+            },
+            "genres": [
+                "hindi pop",
+                "bollywood",
+                "desi",
+                "bangla pop"
+            ],
+            "id": "4YRxDV8wJFPHPTeXepOstw",
+            "image": {
+                "url": "https://i.scdn.co/image/ab6761610000e5eb5ba2d75eb08a2d672f9b69b7",
+                "height": 640,
+                "width": 640
+            },
+            "name": "Arijit Singh",
+            "popularity": 91,
+            "type": "artist",
+            "tracks": [
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273699cce11792075219c61bb2f",
+                        "width": 640,
+                        "height": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/0sSxphmGskGCKlwB9xa6WU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/0sSxphmGskGCKlwB9xa6WU",
+                            "id": "0sSxphmGskGCKlwB9xa6WU",
+                            "name": "Himesh Reshammiya",
+                            "type": "artist",
+                            "uri": "spotify:artist:0sSxphmGskGCKlwB9xa6WU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4YRxDV8wJFPHPTeXepOstw",
+                            "id": "4YRxDV8wJFPHPTeXepOstw",
+                            "name": "Arijit Singh",
+                            "type": "artist",
+                            "uri": "spotify:artist:4YRxDV8wJFPHPTeXepOstw"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/6KZ6c43Dnjm6STHZ6avQU1"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/6KZ6c43Dnjm6STHZ6avQU1",
+                            "id": "6KZ6c43Dnjm6STHZ6avQU1",
+                            "name": "Shabbir Ahmed",
+                            "type": "artist",
+                            "uri": "spotify:artist:6KZ6c43Dnjm6STHZ6avQU1"
+                        }
+                    ],
+                    "duration_ms": 274000,
+                    "id": "2Ul0NiluAcBWG6BJBl40sT",
+                    "name": "Tera Chehra",
+                    "popularity": 75
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273d5f4378b1ffc9119fdc7306d",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/3PpjqSKBer3obW6lDflOBx"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/3PpjqSKBer3obW6lDflOBx",
+                            "id": "3PpjqSKBer3obW6lDflOBx",
+                            "name": "Ram Sampath",
+                            "type": "artist",
+                            "uri": "spotify:artist:3PpjqSKBer3obW6lDflOBx"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4YRxDV8wJFPHPTeXepOstw",
+                            "id": "4YRxDV8wJFPHPTeXepOstw",
+                            "name": "Arijit Singh",
+                            "type": "artist",
+                            "uri": "spotify:artist:4YRxDV8wJFPHPTeXepOstw"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/7vCsTTACb2iT4fvBMnwp5w"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/7vCsTTACb2iT4fvBMnwp5w",
+                            "id": "7vCsTTACb2iT4fvBMnwp5w",
+                            "name": "Prashant Pandey",
+                            "type": "artist",
+                            "uri": "spotify:artist:7vCsTTACb2iT4fvBMnwp5w"
+                        }
+                    ],
+                    "duration_ms": 170044,
+                    "id": "5zCnGtCl5Ac5zlFHXaZmhy",
+                    "name": "Sajni (From \"Laapataa Ladies\")",
+                    "popularity": 79
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273ba03ff79dad25f7c3542382f",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4YRxDV8wJFPHPTeXepOstw",
+                            "id": "4YRxDV8wJFPHPTeXepOstw",
+                            "name": "Arijit Singh",
+                            "type": "artist",
+                            "uri": "spotify:artist:4YRxDV8wJFPHPTeXepOstw"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/09UmIX92EUH9hAK4bxvHx6"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/09UmIX92EUH9hAK4bxvHx6",
+                            "id": "09UmIX92EUH9hAK4bxvHx6",
+                            "name": "Mithoon",
+                            "type": "artist",
+                            "uri": "spotify:artist:09UmIX92EUH9hAK4bxvHx6"
+                        }
+                    ],
+                    "duration_ms": 284779,
+                    "id": "2Fv2injs4qAm8mJBGaxVKU",
+                    "name": "Tujhe Kitna Chahne Lage (From \"Kabir Singh\")",
+                    "popularity": 79
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273b85b4e8fb6ba961aedfde386",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1mBydYMVBECdDmMfE2sEUO"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1mBydYMVBECdDmMfE2sEUO",
+                            "id": "1mBydYMVBECdDmMfE2sEUO",
+                            "name": "Sachin-Jigar",
+                            "type": "artist",
+                            "uri": "spotify:artist:1mBydYMVBECdDmMfE2sEUO"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4YRxDV8wJFPHPTeXepOstw",
+                            "id": "4YRxDV8wJFPHPTeXepOstw",
+                            "name": "Arijit Singh",
+                            "type": "artist",
+                            "uri": "spotify:artist:4YRxDV8wJFPHPTeXepOstw"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/2fMqTqiTxUDlmcOEPaQSsx"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/2fMqTqiTxUDlmcOEPaQSsx",
+                            "id": "2fMqTqiTxUDlmcOEPaQSsx",
+                            "name": "Amitabh Bhattacharya",
+                            "type": "artist",
+                            "uri": "spotify:artist:2fMqTqiTxUDlmcOEPaQSsx"
+                        }
+                    ],
+                    "duration_ms": 261702,
+                    "id": "1hA697u7e1jX2XM8sWA6Uy",
+                    "name": "Apna Bana Le",
+                    "popularity": 75
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b2738405a129d4151b31d13721e0",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4f7KfxeHq9BiylGmyXepGt"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4f7KfxeHq9BiylGmyXepGt",
+                            "id": "4f7KfxeHq9BiylGmyXepGt",
+                            "name": "Tanishk Bagchi",
+                            "type": "artist",
+                            "uri": "spotify:artist:4f7KfxeHq9BiylGmyXepGt"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4YRxDV8wJFPHPTeXepOstw",
+                            "id": "4YRxDV8wJFPHPTeXepOstw",
+                            "name": "Arijit Singh",
+                            "type": "artist",
+                            "uri": "spotify:artist:4YRxDV8wJFPHPTeXepOstw"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4z0z82pXirH1TrygipQlOo"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4z0z82pXirH1TrygipQlOo",
+                            "id": "4z0z82pXirH1TrygipQlOo",
+                            "name": "Afsana Khan",
+                            "type": "artist",
+                            "uri": "spotify:artist:4z0z82pXirH1TrygipQlOo"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/3GdSQUH1BRtl9UrrtuwJlP"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/3GdSQUH1BRtl9UrrtuwJlP",
+                            "id": "3GdSQUH1BRtl9UrrtuwJlP",
+                            "name": "Irshad Kamil",
+                            "type": "artist",
+                            "uri": "spotify:artist:3GdSQUH1BRtl9UrrtuwJlP"
+                        }
+                    ],
+                    "duration_ms": 247792,
+                    "id": "4Lo6I7kkHWgAVRmdILLhig",
+                    "name": "Tu Hain Toh Main Hoon (From \"Sky Force\")",
+                    "popularity": 78
+                }
+            ]
+        }
+    }
+}

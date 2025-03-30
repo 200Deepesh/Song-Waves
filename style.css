@@ -194,10 +194,11 @@ input {
     width: 45px;
     justify-content: center;
     align-self: center;
+    overflow: hidden;
 }
 
 .song-cards img {
-    height: 30px;
+    height: 45px;
 }
 
 .song-name {
@@ -290,7 +291,7 @@ input {
             #1f1f1f 95%);
 }
 
-#hover {
+.hover {
     position: absolute;
     background: #1ed760;
     bottom: -1rem;
@@ -303,7 +304,7 @@ input {
     transition: all 0.1s linear;
 }
 
-#hover>img {
+.hover>img {
     width: 1rem;
 }
 
@@ -321,13 +322,13 @@ input {
 
 #playbar {
     width: calc(100% - 10px);
-    height: 5rem;
+    height: fit-content;
     position: absolute;
     bottom: -200%;
     align-content: baseline;
     padding: 5px;
     transition: all 0.5s linear;
-    margin: 5px;
+    margin: 0 5px;
     background-color: black;
 }
 
@@ -340,13 +341,13 @@ input {
 }
 
 #playbar-pic img {
-    height: 40px;
+    height: 50px;
 }
 
 #playbar-pic {
     height: 50px;
-    padding: 5px;
     align-self: center;
+    overflow: hidden;
 }
 
 #playbar-info {
