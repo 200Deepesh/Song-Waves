@@ -237,6 +237,447 @@
                     "popularity": 78
                 }
             ]
+        },
+        "pritam": {
+            "followers": {
+                "href": null,
+                "total": 48041528
+            },
+            "genres": [
+                "bollywood",
+                "hindi pop",
+                "desi",
+                "sufi"
+            ],
+            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+            "id": "1wRPtKGflJrBx9BmLsSwlU",
+            "image": {
+                "url": "https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca",
+                "height": 640,
+                "width": 640
+            },
+            "name": "Pritam",
+            "popularity": 89,
+            "type": "artist",
+            "tracks": [
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b27352fe6875028c892308ffc2f7",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1wRPtKGflJrBx9BmLsSwlU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+                            "id": "1wRPtKGflJrBx9BmLsSwlU",
+                            "name": "Pritam",
+                            "type": "artist",
+                            "uri": "spotify:artist:1wRPtKGflJrBx9BmLsSwlU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/5GnnSrwNCGyfAU4zuIytiS"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/5GnnSrwNCGyfAU4zuIytiS",
+                            "id": "5GnnSrwNCGyfAU4zuIytiS",
+                            "name": "Mohit Chauhan",
+                            "type": "artist",
+                            "uri": "spotify:artist:5GnnSrwNCGyfAU4zuIytiS"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/3GdSQUH1BRtl9UrrtuwJlP"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/3GdSQUH1BRtl9UrrtuwJlP",
+                            "id": "3GdSQUH1BRtl9UrrtuwJlP",
+                            "name": "Irshad Kamil",
+                            "type": "artist",
+                            "uri": "spotify:artist:3GdSQUH1BRtl9UrrtuwJlP"
+                        }
+                    ],
+                    "duration_ms": 321225,
+                    "id": "7eQl3Yqv35ioqUfveKHitE",
+                    "name": "Tum Se Hi",
+                    "popularity": 79
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273fe77bd21eb38ff74b5f21524",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1wRPtKGflJrBx9BmLsSwlU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+                            "id": "1wRPtKGflJrBx9BmLsSwlU",
+                            "name": "Pritam",
+                            "type": "artist",
+                            "uri": "spotify:artist:1wRPtKGflJrBx9BmLsSwlU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/5diMmmNkRVfgUnXJrzXzjZ"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/5diMmmNkRVfgUnXJrzXzjZ",
+                            "id": "5diMmmNkRVfgUnXJrzXzjZ",
+                            "name": "Javed Bashir",
+                            "type": "artist",
+                            "uri": "spotify:artist:5diMmmNkRVfgUnXJrzXzjZ"
+                        }
+                    ],
+                    "duration_ms": 314239,
+                    "id": "2cPUB8EOT6AfJ8oxhyoNXL",
+                    "name": "Ye Tune Kya Kiya",
+                    "popularity": 78
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273ab1e3b16de1c7ec009880e97",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1wRPtKGflJrBx9BmLsSwlU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+                            "id": "1wRPtKGflJrBx9BmLsSwlU",
+                            "name": "Pritam",
+                            "type": "artist",
+                            "uri": "spotify:artist:1wRPtKGflJrBx9BmLsSwlU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4YRxDV8wJFPHPTeXepOstw",
+                            "id": "4YRxDV8wJFPHPTeXepOstw",
+                            "name": "Arijit Singh",
+                            "type": "artist",
+                            "uri": "spotify:artist:4YRxDV8wJFPHPTeXepOstw"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/3GdSQUH1BRtl9UrrtuwJlP"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/3GdSQUH1BRtl9UrrtuwJlP",
+                            "id": "3GdSQUH1BRtl9UrrtuwJlP",
+                            "name": "Irshad Kamil",
+                            "type": "artist",
+                            "uri": "spotify:artist:3GdSQUH1BRtl9UrrtuwJlP"
+                        }
+                    ],
+                    "duration_ms": 233453,
+                    "id": "6bmmHeCvZI92pRiTHxEdTC",
+                    "name": "O Maahi",
+                    "popularity": 72
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273707ea5b8023ac77d31756ed4",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1wRPtKGflJrBx9BmLsSwlU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+                            "id": "1wRPtKGflJrBx9BmLsSwlU",
+                            "name": "Pritam",
+                            "type": "artist",
+                            "uri": "spotify:artist:1wRPtKGflJrBx9BmLsSwlU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/49ZShkNeIwApYfMlvIUKTX"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/49ZShkNeIwApYfMlvIUKTX",
+                            "id": "49ZShkNeIwApYfMlvIUKTX",
+                            "name": "Sreeram",
+                            "type": "artist",
+                            "uri": "spotify:artist:49ZShkNeIwApYfMlvIUKTX"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/19LIHDDSHBD5NyYHI3gpzB"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/19LIHDDSHBD5NyYHI3gpzB",
+                            "id": "19LIHDDSHBD5NyYHI3gpzB",
+                            "name": "Shilpa Rao",
+                            "type": "artist",
+                            "uri": "spotify:artist:19LIHDDSHBD5NyYHI3gpzB"
+                        }
+                    ],
+                    "duration_ms": 249707,
+                    "id": "0GQngE2rOYvlKwEQjTAsP8",
+                    "name": "Subhanallah",
+                    "popularity": 76
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273095191f6b96fd9eff585befc",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1wRPtKGflJrBx9BmLsSwlU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+                            "id": "1wRPtKGflJrBx9BmLsSwlU",
+                            "name": "Pritam",
+                            "type": "artist",
+                            "uri": "spotify:artist:1wRPtKGflJrBx9BmLsSwlU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4YRxDV8wJFPHPTeXepOstw",
+                            "id": "4YRxDV8wJFPHPTeXepOstw",
+                            "name": "Arijit Singh",
+                            "type": "artist",
+                            "uri": "spotify:artist:4YRxDV8wJFPHPTeXepOstw"
+                        }
+                    ],
+                    "duration_ms": 247941,
+                    "id": "1smFN2CLqGROu0J0UyvDfL",
+                    "name": "Shayad",
+                    "popularity": 74
+                }
+            ]
+        },
+        "ar-rahman": {
+            "followers": {
+                "href": null,
+                "total": 61290282
+            },
+            "genres": [
+                "tamil pop",
+                "kollywood",
+                "sufi",
+                "bollywood",
+                "hindi pop",
+                "desi",
+                "tamil dance"
+            ],
+            "href": "https://api.spotify.com/v1/artists/1mYsTxnqsietFxj1OgoGbG",
+            "id": "1mYsTxnqsietFxj1OgoGbG",
+            "image": {
+                "url": "https://i.scdn.co/image/ab6761610000e5ebb19af0ea736c6228d6eb539c",
+                "height": 640,
+                "width": 640
+            },
+            "name": "A.R. Rahman",
+            "popularity": 82,
+            "type": "artist",
+            "tracks": [
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b27352fe6875028c892308ffc2f7",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1wRPtKGflJrBx9BmLsSwlU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+                            "id": "1wRPtKGflJrBx9BmLsSwlU",
+                            "name": "Pritam",
+                            "type": "artist",
+                            "uri": "spotify:artist:1wRPtKGflJrBx9BmLsSwlU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/5GnnSrwNCGyfAU4zuIytiS"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/5GnnSrwNCGyfAU4zuIytiS",
+                            "id": "5GnnSrwNCGyfAU4zuIytiS",
+                            "name": "Mohit Chauhan",
+                            "type": "artist",
+                            "uri": "spotify:artist:5GnnSrwNCGyfAU4zuIytiS"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/3GdSQUH1BRtl9UrrtuwJlP"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/3GdSQUH1BRtl9UrrtuwJlP",
+                            "id": "3GdSQUH1BRtl9UrrtuwJlP",
+                            "name": "Irshad Kamil",
+                            "type": "artist",
+                            "uri": "spotify:artist:3GdSQUH1BRtl9UrrtuwJlP"
+                        }
+                    ],
+                    "duration_ms": 321225,
+                    "id": "7eQl3Yqv35ioqUfveKHitE",
+                    "name": "Tum Se Hi",
+                    "popularity": 79
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273fe77bd21eb38ff74b5f21524",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1wRPtKGflJrBx9BmLsSwlU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+                            "id": "1wRPtKGflJrBx9BmLsSwlU",
+                            "name": "Pritam",
+                            "type": "artist",
+                            "uri": "spotify:artist:1wRPtKGflJrBx9BmLsSwlU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/5diMmmNkRVfgUnXJrzXzjZ"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/5diMmmNkRVfgUnXJrzXzjZ",
+                            "id": "5diMmmNkRVfgUnXJrzXzjZ",
+                            "name": "Javed Bashir",
+                            "type": "artist",
+                            "uri": "spotify:artist:5diMmmNkRVfgUnXJrzXzjZ"
+                        }
+                    ],
+                    "duration_ms": 314239,
+                    "id": "2cPUB8EOT6AfJ8oxhyoNXL",
+                    "name": "Ye Tune Kya Kiya",
+                    "popularity": 78
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273ab1e3b16de1c7ec009880e97",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1wRPtKGflJrBx9BmLsSwlU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+                            "id": "1wRPtKGflJrBx9BmLsSwlU",
+                            "name": "Pritam",
+                            "type": "artist",
+                            "uri": "spotify:artist:1wRPtKGflJrBx9BmLsSwlU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4YRxDV8wJFPHPTeXepOstw",
+                            "id": "4YRxDV8wJFPHPTeXepOstw",
+                            "name": "Arijit Singh",
+                            "type": "artist",
+                            "uri": "spotify:artist:4YRxDV8wJFPHPTeXepOstw"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/3GdSQUH1BRtl9UrrtuwJlP"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/3GdSQUH1BRtl9UrrtuwJlP",
+                            "id": "3GdSQUH1BRtl9UrrtuwJlP",
+                            "name": "Irshad Kamil",
+                            "type": "artist",
+                            "uri": "spotify:artist:3GdSQUH1BRtl9UrrtuwJlP"
+                        }
+                    ],
+                    "duration_ms": 233453,
+                    "id": "6bmmHeCvZI92pRiTHxEdTC",
+                    "name": "O Maahi",
+                    "popularity": 72
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273707ea5b8023ac77d31756ed4",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1wRPtKGflJrBx9BmLsSwlU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+                            "id": "1wRPtKGflJrBx9BmLsSwlU",
+                            "name": "Pritam",
+                            "type": "artist",
+                            "uri": "spotify:artist:1wRPtKGflJrBx9BmLsSwlU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/49ZShkNeIwApYfMlvIUKTX"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/49ZShkNeIwApYfMlvIUKTX",
+                            "id": "49ZShkNeIwApYfMlvIUKTX",
+                            "name": "Sreeram",
+                            "type": "artist",
+                            "uri": "spotify:artist:49ZShkNeIwApYfMlvIUKTX"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/19LIHDDSHBD5NyYHI3gpzB"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/19LIHDDSHBD5NyYHI3gpzB",
+                            "id": "19LIHDDSHBD5NyYHI3gpzB",
+                            "name": "Shilpa Rao",
+                            "type": "artist",
+                            "uri": "spotify:artist:19LIHDDSHBD5NyYHI3gpzB"
+                        }
+                    ],
+                    "duration_ms": 249707,
+                    "id": "0GQngE2rOYvlKwEQjTAsP8",
+                    "name": "Subhanallah",
+                    "popularity": 76
+                },
+                {
+                    "image": {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273095191f6b96fd9eff585befc",
+                        "height": 640,
+                        "width": 640
+                    },
+                    "artists": [
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/1wRPtKGflJrBx9BmLsSwlU"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/1wRPtKGflJrBx9BmLsSwlU",
+                            "id": "1wRPtKGflJrBx9BmLsSwlU",
+                            "name": "Pritam",
+                            "type": "artist",
+                            "uri": "spotify:artist:1wRPtKGflJrBx9BmLsSwlU"
+                        },
+                        {
+                            "external_urls": {
+                                "spotify": "https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw"
+                            },
+                            "href": "https://api.spotify.com/v1/artists/4YRxDV8wJFPHPTeXepOstw",
+                            "id": "4YRxDV8wJFPHPTeXepOstw",
+                            "name": "Arijit Singh",
+                            "type": "artist",
+                            "uri": "spotify:artist:4YRxDV8wJFPHPTeXepOstw"
+                        }
+                    ],
+                    "duration_ms": 247941,
+                    "id": "1smFN2CLqGROu0J0UyvDfL",
+                    "name": "Shayad",
+                    "popularity": 74
+                }
+            ]
         }
     }
 }

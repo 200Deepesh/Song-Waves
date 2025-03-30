@@ -126,7 +126,9 @@ async function displaySongsTest() {
         let element = document.getElementById(song);
         element.addEventListener("click", () => {
             playPause(currentSong);
-            playPause(song);
+            if(currentSong != song){
+                playPause(song);
+            }
         })
     }
 
